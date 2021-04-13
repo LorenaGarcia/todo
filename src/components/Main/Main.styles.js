@@ -48,7 +48,11 @@ const Input = styled.input`
   }
 
   @media (max-width: 480px) {
-    width: 100%;
+    width: 94%;
+  }
+
+  @media (min-width: 481px) and (max-width: 950px) {
+    margin-right: 1rem;
   }
 `;
 
@@ -58,6 +62,7 @@ const AddDetail = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-top: 2rem;
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -146,6 +151,19 @@ const ButtonDelete = styled.button`
   outline: none;
 `;
 
+const Message = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #f33a3a;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+`;
+
 export {
   Container,
   Menu,
@@ -161,4 +179,5 @@ export {
   ContainerButtonDelette,
   ButtonDelete,
   Icon,
+  Message,
 };

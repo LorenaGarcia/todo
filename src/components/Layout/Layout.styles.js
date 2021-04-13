@@ -19,6 +19,16 @@ const Container = styled.div`
       "main"
       "footer";
   }
+
+  @media (min-width: 481px) and (max-width: 950px) {
+    padding: 2rem;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-areas:
+      "header header header"
+      "left main rigth"
+      "footer footer footer";
+  }
 `;
 
 const Header = styled.div`

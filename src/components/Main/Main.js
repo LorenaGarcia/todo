@@ -14,6 +14,7 @@ import {
   ContainerButtonDelette,
   ButtonDelete,
   Icon,
+  Message,
 } from "./Main.styles";
 
 const Main = ({
@@ -28,6 +29,7 @@ const Main = ({
   showCompleted,
   handleDeleteTask,
   handleDeleteAll,
+  message,
 }) => {
   return (
     <Container>
@@ -42,6 +44,12 @@ const Main = ({
           Completed {showCompleted && <Border></Border>}
         </TitleMenu>
       </Menu>
+      {message && (
+        <Message>
+          <span className="material-icons">info</span>
+          {message}
+        </Message>
+      )}
       {showAll || showActive ? (
         <AddDetail>
           <Input

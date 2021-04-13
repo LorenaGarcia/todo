@@ -6,6 +6,7 @@ import { Main } from "./components/Main";
 const Home = () => {
   const [addTask, setAddTask] = useState("");
   const [showAll, setShowAll] = useState(true);
+  const [message, setMessage] = useState(null);
   const [showActive, setShowActive] = useState(false);
   const [showCompleted, setShowCompleted] = useState(false);
   const [tasks, setTasks] = useState(
@@ -51,11 +52,20 @@ const Home = () => {
     const taskDelete = [...tasks];
     taskDelete.splice(index, 1);
     setTasks(taskDelete);
+    setMessage("Item removed !!!");
+    setTimeout(() => {
+      setMessage(null);
+    }, 1000);
   };
 
   const handleDeleteAll = () => {
     const resultStays = tasks.filter((value) => value.check !== true);
     setTasks(resultStays);
+    setMessage("All items removed !!!");
+
+    setTimeout(() => {
+      setMessage(null);
+    }, 1000);
   };
 
   return (
@@ -73,6 +83,7 @@ const Home = () => {
         handleview={handleview}
         handleDeleteTask={handleDeleteTask}
         handleDeleteAll={handleDeleteAll}
+        message={message}
       />
     </Layout>
   );
